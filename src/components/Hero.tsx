@@ -26,7 +26,7 @@ export default function Hero() {
           <p className="mt-6 text-xl md:text-2xl leading-8 max-w-3xl mx-auto mb-10 drop-shadow-md">
             University of Asia Pacific is a leading institution committed to providing 
             world-class education, fostering innovation, and developing future leaders 
-            who will shape tomorrow's world.
+            who will shape tomorrow&rsquo;s world.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/apply" className="btn btn-primary text-lg px-10 py-4 bg-yellow-500 hover:bg-yellow-600 text-black font-bold shadow-xl transform hover:scale-105 transition-all">

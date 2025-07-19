@@ -23,7 +23,7 @@ export default function MissionVisionHero() {
           </h1>
           
           <p className="text-xl md:text-2xl leading-8 mb-12 max-w-3xl mx-auto opacity-90">
-            Discover the foundational principles that drive UAP's commitment to 
+            Discover the foundational principles that drive UAP&rsquo;s commitment to 
             excellence in education and our vision for the future of learning.
           </p>
           
