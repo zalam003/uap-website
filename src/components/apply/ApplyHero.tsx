@@ -22,7 +22,7 @@ export default function ApplyHero() {
           </h1>
           
           <p className="text-xl md:text-2xl leading-8 mb-12 max-w-3xl mx-auto opacity-90">
-            Join UAP's community of innovators, leaders, and changemakers. 
+            Join UAP&rsquo;s community of innovators, leaders, and changemakers. 
             Apply now for our undergraduate and graduate programs.
           </p>
           
