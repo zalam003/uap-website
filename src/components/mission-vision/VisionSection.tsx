@@ -39,8 +39,8 @@ export default function VisionSection() {
             <div className="order-2 lg:order-1">
               <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-blue-100">
                 <h3 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-6 leading-tight">
-                  "UAP's vision is to advance science, technology, and humanities through 
-                  innovation in higher education, research, and development for a better society."
+                  &ldquo;UAP&rsquo;s vision is to advance science, technology, and humanities through 
+                  innovation in higher education, research, and development for a better society.&rdquo;
                 </h3>
                 <p className="text-lg text-secondary-600 leading-relaxed mb-8">
                   This vision reflects our commitment to being at the forefront of educational 
