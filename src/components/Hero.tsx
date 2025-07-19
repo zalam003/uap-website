@@ -2,10 +2,30 @@
 
 import Link from 'next/link'
 import { ArrowRight, Play, X } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function Hero() {
   const [showVideo, setShowVideo] = useState(false)
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setShowVideo(false)
+      }
+    }
+
+    if (showVideo) {
+      document.addEventListener('keydown', handleEscape)
+      // Prevent background scrolling
+      document.body.style.overflow = 'hidden'
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
+  }, [showVideo])
 
   return (
     <>
@@ -75,15 +95,21 @@ export default function Hero() {
 
       {/* Video Modal */}
       {showVideo && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-6xl mx-auto">
+        <div 
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setShowVideo(false)}
+        >
+          <div 
+            className="relative w-full max-w-6xl mx-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Close button */}
             <button
               onClick={() => setShowVideo(false)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full p-2 hover:bg-black/70"
               aria-label="Close video"
             >
-              <X className="h-8 w-8" />
+              <X className="h-6 w-6" />
             </button>
             
             {/* Video container */}
@@ -98,16 +124,57 @@ export default function Hero() {
                 ></iframe>
               </div>
               
-              {/* Video info */}
+              {/* Video info with close button */}
               <div className="p-6 bg-white">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  University of Asia Pacific - Virtual Tour
-                </h3>
-                <p className="text-gray-600">
-                  Take a virtual tour of our beautiful campus and discover the facilities, 
-                  academic buildings, and vibrant student life at UAP.
-                </p>
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                      University of Asia Pacific - Virtual Tour
+                    </h3>
+                    <p className="text-gray-600">
+                      Take a virtual tour of our beautiful campus and discover the facilities, 
+                      academic buildings, and vibrant student life at UAP.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setShowVideo(false)}
+                    className="ml-4 text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-lg hover:bg-gray-100"
+                    aria-label="Close video"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
+                </div>
+                
+                {/* Action buttons */}
+                <div className="mt-4 flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => setShowVideo(false)}
+                    className="btn btn-secondary px-6 py-2 text-sm"
+                  >
+                    Back to Home
+                  </button>
+                  <Link
+                    href="/apply"
+                    className="btn btn-primary px-6 py-2 text-sm"
+                    onClick={() => setShowVideo(false)}
+                  >
+                    Apply Now
+                  </Link>
+                  <a
+                    href="https://youtu.be/nzTSBIlwCjk?si=VKC93AZ9oYi4-H25"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-outline px-6 py-2 text-sm"
+                  >
+                    Watch on YouTube
+                  </a>
+                </div>
               </div>
+            </div>
+            
+            {/* Click hint */}
+            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-white/70 text-sm">
+              Click outside the video or press the X to close
             </div>
           </div>
         </div>
