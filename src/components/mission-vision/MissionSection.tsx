@@ -71,10 +71,10 @@ export default function MissionSection() {
             <div>
               <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-3xl p-8 md:p-12 text-white shadow-2xl">
                 <h3 className="text-2xl md:text-3xl font-bold mb-6 leading-tight">
-                  "UAP's mission is to hold excellence high in maintaining faculty members and staff, 
+                  &ldquo;UAP&rsquo;s mission is to hold excellence high in maintaining faculty members and staff, 
                   facilities for faculty research and student practicum harmonized with co-curricular 
                   activities so that UAP produces graduates to meet the global standards and in creating 
-                  impact to the society."
+                  impact to the society.&rdquo;
                 </h3>
                 <p className="text-green-100 leading-relaxed mb-8 text-lg">
                   Our mission encompasses maintaining highly qualified faculty, modern facilities, 
