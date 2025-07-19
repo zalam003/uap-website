@@ -1,0 +1,10 @@
+/docs
+/scripts
+/tests
+/__tests__
+/coverage
+.env*
+.vscode
+.idea
+*.log
+*.md
